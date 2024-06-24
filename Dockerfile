@@ -8,6 +8,7 @@ RUN cargo install diesel_cli --no-default-features --features postgres --locked
 FROM ubuntu:22.04
 RUN apt-get update && apt-get install -y libpq-dev ca-certificates postgresql-client && rm -rf /var/lib/apt/lists/*
 WORKDIR /app
+RUN mkdir -p /app/data
 COPY --from=builder /usr/src/perplexitytelegramassistant/target/release/perplexitytelegramassistant /usr/local/bin/
 COPY --from=builder /usr/local/cargo/bin/diesel /usr/local/bin/diesel
 COPY --from=builder /usr/src/perplexitytelegramassistant/migrations ./migrations

@@ -28,6 +28,8 @@ services:
     depends_on:
       db:
         condition: service_healthy
-
+    volumes:
+      - app_data:/app/data
 volumes:
   postgres_data:
+  app_data:

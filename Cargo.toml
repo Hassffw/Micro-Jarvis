@@ -1,0 +1,19 @@
+[package]
+name = "perplexitytelegramassistant"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tokio = { version = "1", features = ["full"] }
+teloxide = { version = "0.12", features = ["macros"] }
+diesel = { version = "1.4.8", features = ["postgres", "r2d2"] }
+serde = { version = "1.0", features = ["derive"] }
+dotenv = "0.15.0"
+serde_json = "1.0"
+reqwest = { version = "0.11", features = ["json"] }
+linfa = "0.6.1"
+linfa-linear = "0.6.1"
+ndarray = { version = "0.15", features = ["serde"] }
+
+[dev-dependencies]
+approx = "0.5.0"
